@@ -1,0 +1,100 @@
+\section{The algorithm}
+\label{sec:algorithm}
+
+The reconstruction of $m_{\PHiggs\PHiggs}$ is based on maximizing the likelihood function:
+\begin{align}
+&
+\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})
+= \frac{32\pi^{4}}{s} \, \int \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
+& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} 
+ \cdot \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
+ \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
+ \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot \nonumber \\
+& \qquad W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) 
+ \, W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, .
+\label{eq:likelihood_with_hadRecoil}
+\end{align}
+with respect to the parameter $m_{\textrm{X}}$, 
+the mass of the heavy particle $\textrm{X}$ that decays into a pair of $\PHiggs$ bosons.
+We refer to the electron, muon, or hadrons produced in each $\Pgt$ decay as the ``visible'' $\Pgt$ decay products.
+Their momentum is denoted by the symbol $\bm{p}^{\vis(i)$ ($i = 1,\ldots,4$).
+Bold letters represent vector quantities.
+The symbol $d\Phi_{n} = \prod_{i}^{n} \,
+\frac{d^{3}\bm{p}^{(i)}}{(2\pi)^{3} \, 2 E_{(i)}}$ denotes the differential $n$-particle phase space element,
+where $n$ refers to the number of particles in the final state.
+The symbol $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
+denotes the squared modulus of the ME for the decay of the $i$-th $\Pgt$ lepton.
+The symbols $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are referred to as ``transfer functions'' (TF).
+They quantify the experimental resolutions with which the momenta of particles reconstructed in the event are measured.
+More specifically, the TF $W(\bm{p}|\bm{\hat{p}})$ represents the probability density to observe the measured momentum $\bm{p}$,
+given that its the true value of the momentum is $\bm{\hat{p}}$.
+The symbol $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ represents the resolutions for measuring the momenta of the visible $\Pgt$ decay products,
+while the symbol $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ quantifies the resolution for measuring the momentum, in the transverse plane, of the hadronic recoil.
+The hadronic recoil is defined as the vectorial sum of all particles in the event that do not originate from the decay of the two $\PHiggs$ bosons.
+The components $\pX^{\rec}$ and $\pY^{\rec}$ of its momentum are related to the corresponding components $\METx$ and $\METy$ of the ``missing transverse momentum'',
+the vectorial sum of the momenta of all neutrinos produced in the $\Pgt$ lepton decays, via the relations:
+\begin{align}
+\METx = & -( \pX^{\rec} + \pX^{\vis(1)} + \pX^{\vis(2)} + \pX^{\vis(3)} + \pX^{\vis(4)} ) \nonumber \\
+\METy = & -( \pY^{\rec} + \pY^{\vis(1)} + \pY^{\vis(2)} + \pY^{\vis(3)} + \pY^{\vis(4)} ) \nonumber \, .
+\end{align}
+
+The number of particles in the final state, $n$, depends on how many $\Pgt$ leptons decay to electrons or muons 
+and how many decay to hadrons.
+Following the formalism developed in Ref.~\cite{SVfitMEM}, 
+we treat hadronic $\Pgt$ decays as two-body decays into a hadronic system $\tauh$ and a $\Pnut$.
+Correspondingly, $n$ increases by $2$ for each leptonic ($\Pgt \to \enunu$ or $\Pgt \to \mununu$) and by $3$ units for each hadronic ($\Pgt \to \textrm{hadrons} + \Pnut$) $\Pgt$ decay.
+Particles that are part of the hadronic recoil do not contribute to the differential $n$-particle phase space element $d\Phi_{n}$.
+The dimension of the integral over the differential $n$-particle phase space element $d\Phi_{n}$ thus
+varies between $8$ for events that decay via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \tauh\tauh\tauh\tauh$ 
+and $12$ for events that decay via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\Plepton\Plepton$,
+where the symbol $\Plepton$ refers to either an electron or a muon.
+
+The dimensionality of the integration over the $n$-particle phase space element $d\Phi_{n}$ 
+can be reduced by means of analytic transformations. 
+Two (three) variables are sufficient to fully parametrize the kinematics of hadronic (leptonic) $\Pgt$ decays.
+We choose to parametrize hadronic $\Pgt$ decays by the variables $z$ and $\phi_{\inv}$,
+and leptonic $\Pgt$ decays by the variables $z$, $\phi_{\inv}$, and $m_{\inv}$.
+The variable $z$ corresponds to the fraction of $\Pgt$ lepton energy, in the laboratory frame, that is carried by the visible $\Pgt$ decay products.
+The variable $\phi_{\inv}$ specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector,
+where the vector $\bm{p}^{\vis}$ refers to the momentum of the visible $\Pgt$ decay products,
+and we denote by the vector $\bm{p}^{\inv}$ the momentum of the $\Pnut$ (the vectorial sum of the momenta of the two neutrinos) produced in hadronic (leptonic) $\Pgt$ decays.
+The variable $m_{\inv}$ denotes the mass of the neutrino pair produced in leptonic $\Pgt$ decays.
+Expressions for the product of the differential $n$-particle phase space element $d\Phi_{n}$ 
+with the squared moduli $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
+of the ME for the $\Pgt$ decays that are obtained by these analytic transformations are given by Eq.~[33] in Ref.~\cite{SVfitMEM}.
+The expressions read:
+\begin{align}
+\vert \BW_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\tilde{p}}) \vert^{2} \, d\Phi^{(i)}_{\tauhnu} 
+ = & \, \frac{\pi}{m_{\Pgt}\Gamma_{\Pgt}} \,
+ f_{\Phadron}\left(\bm{\hat{p}}^{\vis(i)}, m^{\vis(i)},
+   \bm{\hat{p}}^{\inv(i)}\right) \, \frac{d^{3}\bm{\hat{p}}^{\vis}}{2 \hat{E}_{\vis}} \, dz \, d\phi_{\inv} \nonumber \\
+\vert \BW_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\tilde{p}}) \vert^{2} \, d\Phi^{(i)}_{\ellnunu} 
+ = & \, \frac{\pi}{m_{\Pgt}\Gamma_{\Pgt}} \, f_{\ell}\left(\bm{\hat{p}}^{\vis(i)},
+ m^{\vis(i)}, \bm{\hat{p}}^{\inv(i)}\right) \, \frac{d^{3}\bm{\hat{p}}^{\vis}}{2 \hat{E}_{\vis}} \, dz \, dm^{2}_{\inv} \, d\phi_{\inv}
+ \nonumber \, ,
+\end{align}
+where the functions $f_{\Phadron}$ and $f_{\ell}$ given by:
+\begin{align}
+f_{h}\left(\bm{p}^{\vis}, m_{\vis}, \bm{p}^{\inv}\right) = &
+  \frac{\vert\mathcal{M}^{\eff}_{\Pgt \to \tauh\Pnut}\vert^{2}}{256\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \\
+f_{\Plepton}\left(\bm{p}^{\vis}, m_{\vis}, \bm{p}^{\inv}\right) = &
+  \frac{I_{\inv}}{512\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \, . 
+\end{align}
+
+
+--- BIS HIER !!!
+
+
+(1)
+The differential $n$-particle phase space element $d\Phi_{n}$ depends
+Following the formalism developed in Ref.~\cite{SVfitMEM}, 
+we treat hadronic $\Pgt$ decays as two-body decays into a hadronic system $\tauh$ and a $\Pnut$.
+
+(2) delta function for Higgs mass constraint
+
+(3) numeric integration by Markov Chain -> rewrite above equation to form of Eq.[43] in SVfitMEM paper
+
+(4) ambiguity factor 2 for building OS pairs resolved by taking combination for which the integrand in Eq. becomes maximal
+
+
+
