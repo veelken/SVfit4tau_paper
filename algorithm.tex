@@ -8,8 +8,8 @@ The reconstruction of $m_{\PHiggs\PHiggs}$ is based on maximizing the likelihood
 = \frac{32\pi^{4}}{s} \, \int \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
 & \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} 
  \cdot \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot \nonumber \\
+ \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}}) \vert^{2}
+ \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}}) \vert^{2} \cdot \nonumber \\
 & \qquad W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) 
  \, W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, .
 \label{eq:likelihood_with_hadRecoil}
@@ -81,20 +81,71 @@ f_{\Plepton}\left(\bm{p}^{\vis}, m_{\vis}, \bm{p}^{\inv}\right) = &
   \frac{I_{\inv}}{512\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \, . 
 \end{align}
 
+The knowledge that the four $\Pgt$ leptons originate from the decay of two $\PHiggs$ bosons is incorporated into the likelihood function 
+$\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$,
+given by Eq.~\ref{eq:likelihood_with_hadRecoil}, by suitably chosen constraints.
+For the purpose of defining the constraints, it is useful to enumerate the $\Pgt$ leptons 
+such that the $\Pgt$ leptons with indices $i=1$ and $i=2$ are interpreted as originating from one and the same $\PHiggs$ boson.
+We then demand that the visible $\Pgt$ decay products corresponding to the indices $i=1$ and $i=2$ have opposite charge,
+and require the same for the visible $\Pgt$ decay products corresponding to the indices $i=3$ and $i=4$.
+As the width of the $\PHiggs$ boson is known to be small~\cite{HIG-14-002,Aad:2015xua} compared to the experimental resolution that we aim to achieve on $m_{\PHiggs\PHiggs}$,
+we choose to neglect it and use the narrow-width approximation (NWA) for each $\PHiggs$ boson.
+The NWA introduces two $\delta$-functions, 
+$\delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right)$ 
+and 
+$\delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)$ 
+into Eq.~\ref{eq:likelihood_with_hadRecoil}.
+We make the simplifying assumption that the angle between the visible $\Pgt$ decay products and the neutrino is negligible for each $\Pgt$ lepton $i$,
+\ie assume that the vectors $\bm{\hat{p}}^{\vis(i)$ and $\bm{\hat{p}}^{\inv(i)}$ are parallel.
+The assumption is justified by the fact that $\pT$ of the visible $\Pgt$ decay products at the LHC are typically large compared to $m_{\Pgt} = 1.777$~\GeV~\cite{PDG}.
+With this approximation, the $\delta$-functions simplify to 
+$\delta\left(\frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{z_{1} \, z_{2}} - m_{\PHiggs}^{2}\right)$ 
+and 
+$\delta\left(\frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{z_{3} \, z_{4}} - m_{\PHiggs}^{2}\right)$.
+They are used to eliminate the integration over the variables $z_{2}$ and $z_{4}$.
+The $\delta$-function rule:
+\begin{equation*} 
+\delta \left( g(x) \right) = \sum_{k} \frac{\delta \left( x - x_{k}
+  \right)}{\vert g'(x_{k}) \vert} 
+\end{equation*}
+yields the two factors $m_{\PHiggs}^{2}/z_{2}$ and $m_{\PHiggs}^{2}/z_{4}$,
+with 
+$z_{2} = \frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{m_{\PHiggs}^{2} \, z_{1}}$ 
+and 
+$z_{4} = \frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{m_{\PHiggs}^{2} \, z_{3}}$.
 
---- BIS HIER !!!
+The evaluation of the remaining integral is performed in analogy with the procedure described in Section~3 of Ref.~\cite{SVfitMEM}.
+Instead of computing the likelihood function for a series of values for the parameter $m_{\textrm{X}}$ and finding the value that maximizes the likelihood,
+the following integral is computed:
+\begin{align}
+&
+\mathcal{L}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec})
+= \frac{32\pi^{4}}{s} \, \int \, dm_{\PHiggs} \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
+& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} 
+ \cdot \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
+ \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
+ \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot \nonumber \\
+& \qquad W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) 
+ \, W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, \cdot \mathcal{F}(\bm{p}) \, ,
+\label{eq:cSVfit_with_hadRecoil}
+\end{align}
+with 
+$\mathcal{F}(\bm{p}) = \sqrt{(\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)} + \hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)} + \bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2}}$.
+The evaluation of the integral is performed using a custom implementation of the Markov chain Monte Carlo integration method 
+with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
+The estimate for the mass $m_{\textrm{X}}$ of the $\PHiggs$ boson pair is obtained by recording the value of $\mathcal{F}(\bm{p})$
+for each evaluation of the integrand in Eq.~\ref{eq:cSVfit_with_hadRecoil} by the Markov chain and taking the median of the series of $\mathcal{F}(\bm{p})$ values.
+The total number of evaluations of the integrand amounts to $100\,000$ per event. 
+The first $10\,000$ evaluations are used as ``burn-in'' period to reach the equilibrium distribution of the Markov chain and are excluded from the computation of the median.
 
+We note in passing that our implementation provides flexibility to choose different functions $\mathcal{F}(\bm{p})$, 
+which allows to also reconstruct the $\pT$, $\eta$, and $\phi$ of the $\PHiggs$ boson pair,
+while in this paper we will focus on the mass $m_{\PHiggs\PHiggs}$.
 
-(1)
-The differential $n$-particle phase space element $d\Phi_{n}$ depends
-Following the formalism developed in Ref.~\cite{SVfitMEM}, 
-we treat hadronic $\Pgt$ decays as two-body decays into a hadronic system $\tauh$ and a $\Pnut$.
-
-(2) delta function for Higgs mass constraint
-
-(3) numeric integration by Markov Chain -> rewrite above equation to form of Eq.[43] in SVfitMEM paper
-
-(4) ambiguity factor 2 for building OS pairs resolved by taking combination for which the integrand in Eq. becomes maximal
-
-
+A remaining issue for the algorithm is that in $\textrm{X} \to \PHiggs\PHiggs \to \Pgt^{+}\Pgt^{-}\Pgt^{+}\Pgt^{-}$ events 
+there exist two possibilities for building pairs of $\Pgt$ leptons of opposite charge.
+The ambiguity is resolved, and a unique value of $m_{\PHiggs\PHiggs}$ is obtained for each event, 
+by first discarding pairings for which the mass of the visible $\Pgt$ decay products exceeds $m_{\PHiggs}$
+and then selecting the pairing for which the integrand in Eq.~\ref{eq:cSVfit_with_hadRecoil} attains the maximal value.
+We will demonstrate in Section~\ref{sec:performance} that this choice yields the correct pairing in the vast majority of events.
 
