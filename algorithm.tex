@@ -24,12 +24,14 @@ The symbol $d\Phi_{n} = \prod_{i}^{n} \,
 where $n$ refers to the number of particles in the final state.
 The symbol $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
 denotes the squared modulus of the ME for the decay of the $i$-th $\Pgt$ lepton.
-The symbols $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are referred to as ``transfer functions'' (TF).
+The functions $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are referred to as ``transfer functions'' (TF).
 They quantify the experimental resolutions with which the momenta of particles reconstructed in the event are measured.
-More specifically, the TF $W(\bm{p}|\bm{\hat{p}})$ represents the probability density to observe the measured momentum $\bm{p}$,
+The function $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ represents the resolutions for measuring the momenta of the visible $\Pgt$ decay products,
+while the function $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ quantifies the resolution for measuring the momentum, in the transverse plane, of the hadronic recoil.
+The nomenclature $W(\bm{p}|\bm{\hat{p}})$ has the following meaning:
+The value of the function $W(\bm{p}|\bm{\hat{p}})$ represents the probability density to observe the measured momentum $\bm{p}$,
 given that its the true value of the momentum is $\bm{\hat{p}}$.
-The symbol $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ represents the resolutions for measuring the momenta of the visible $\Pgt$ decay products,
-while the symbol $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ quantifies the resolution for measuring the momentum, in the transverse plane, of the hadronic recoil.
+The TF $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are taken from Ref.~\cite{SVfitMEM}.
 The hadronic recoil is defined as the vectorial sum of all particles in the event that do not originate from the decay of the two $\PHiggs$ bosons.
 The components $\pX^{\rec}$ and $\pY^{\rec}$ of its momentum are related to the corresponding components $\METx$ and $\METy$ of the ``missing transverse momentum'',
 the vectorial sum of the momenta of all neutrinos produced in the $\Pgt$ lepton decays, via the relations:
@@ -135,8 +137,9 @@ The evaluation of the integral is performed using a custom implementation of the
 with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
 The estimate for the mass $m_{\textrm{X}}$ of the $\PHiggs$ boson pair is obtained by recording the value of $\mathcal{F}(\bm{p})$
 for each evaluation of the integrand in Eq.~\ref{eq:cSVfit_with_hadRecoil} by the Markov chain and taking the median of the series of $\mathcal{F}(\bm{p})$ values.
-The total number of evaluations of the integrand amounts to $100\,000$ per event. 
+The total number of evaluations of the integrand, referred to as Markov chain ``states'', amounts to $100\,000$ per event. 
 The first $10\,000$ evaluations are used as ``burn-in'' period to reach the equilibrium distribution of the Markov chain and are excluded from the computation of the median.
+The transitions between subsequent states of the Markov chain are computed for the case that $\mathcal{F}(\bm{p}) \equiv 1$.
 
 We note in passing that our implementation provides flexibility to choose different functions $\mathcal{F}(\bm{p})$, 
 which allows to also reconstruct the $\pT$, $\eta$, and $\phi$ of the $\PHiggs$ boson pair,
