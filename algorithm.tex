@@ -6,12 +6,11 @@ The reconstruction of $m_{\PHiggs\PHiggs}$ is based on maximizing the likelihood
 &
 \mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})
 = \frac{32\pi^{4}}{s} \, \int \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
-& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} 
- \cdot \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot \nonumber \\
-& \qquad W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) 
- \, W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, .
+& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
+& \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, .
 \label{eq:likelihood_with_hadRecoil}
 \end{align}
 with respect to the parameter $m_{\textrm{X}}$, 
@@ -93,17 +92,25 @@ and require the same for the visible $\Pgt$ decay products corresponding to the 
 As the width of the $\PHiggs$ boson is known to be small~\cite{HIG-14-002,Aad:2015xua} compared to the experimental resolution that we aim to achieve on $m_{\PHiggs\PHiggs}$,
 we choose to neglect it and use the narrow-width approximation (NWA) for each $\PHiggs$ boson.
 The NWA introduces two $\delta$-functions, 
-$\delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right)$ 
+\begin{equation*}
+\delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right)
+\end{equation*}
 and 
-$\delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)$ 
+\begin{equation*}
+\delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)
+\end{equation*}
 into Eq.~\ref{eq:likelihood_with_hadRecoil}.
 We make the simplifying assumption that the angle between the visible $\Pgt$ decay products and the neutrino is negligible for each $\Pgt$ lepton $i$,
 \ie assume that the vectors $\bm{\hat{p}}^{\vis(i)}$ and $\bm{\hat{p}}^{\inv(i)}$ are parallel.
 The assumption is justified by the fact that $\pT$ of the visible $\Pgt$ decay products at the LHC are typically large compared to $m_{\Pgt} = 1.777$~\GeV~\cite{PDG}.
 With this approximation, the $\delta$-functions simplify to 
-$\delta\left(\frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{z_{1} \, z_{2}} - m_{\PHiggs}^{2}\right)$ 
+\begin{equation*}
+\delta\left(\frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{z_{1} \, z_{2}} - m_{\PHiggs}^{2}\right)
+\end{equation*}
 and 
-$\delta\left(\frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{z_{3} \, z_{4}} - m_{\PHiggs}^{2}\right)$.
+\begin{equation*}
+\delta\left(\frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{z_{3} \, z_{4}} - m_{\PHiggs}^{2}\right) \, .
+\end{equation*}
 They are used to eliminate the integration over the variables $z_{2}$ and $z_{4}$.
 The $\delta$-function rule:
 \begin{equation*} 
@@ -112,9 +119,13 @@ The $\delta$-function rule:
 \end{equation*}
 yields the two factors $m_{\PHiggs}^{2}/z_{2}$ and $m_{\PHiggs}^{2}/z_{4}$,
 with 
-$z_{2} = \frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{m_{\PHiggs}^{2} \, z_{1}}$ 
+\begin{equation*}
+z_{2} = \frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{m_{\PHiggs}^{2} \, z_{1}}
+\end{equation*}
 and 
-$z_{4} = \frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{m_{\PHiggs}^{2} \, z_{3}}$.
+\begin{equation*} 
+z_{4} = \frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{m_{\PHiggs}^{2} \, z_{3}} \, .
+\end{equation*}
 
 The evaluation of the remaining integral is performed in analogy with the procedure described in Section~3 of Ref.~\cite{SVfitMEM}.
 Instead of computing the likelihood function for a series of values for the parameter $m_{\textrm{X}}$ and finding the value that maximizes the likelihood,
@@ -123,16 +134,18 @@ the following integral is computed:
 &
 \mathcal{L}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec})
 = \frac{32\pi^{4}}{s} \, \int \, dm_{\PHiggs} \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
-& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} 
- \cdot \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}
- \cdot \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot \nonumber \\
-& \qquad W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) 
- \, W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, \cdot \mathcal{F}(\bm{p}) \, ,
+& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
+& \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, \cdot \mathcal{F}(\bm{p}) \, ,
 \label{eq:cSVfit_with_hadRecoil}
 \end{align}
 with 
-$\mathcal{F}(\bm{p}) = \sqrt{(\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)} + \hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)} + \bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2}}$.
+\begin{align}
+\mathcal{F}(\bm{p}) = & \left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)} + \hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} \right. \nonumber \\
+& \qquad - \left. (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)} + \bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} \right)^{\frac{1}{2}} \, .
+\end{align}
 The evaluation of the integral is performed using a custom implementation of the Markov chain Monte Carlo integration method 
 with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
 The estimate for the mass $m_{\textrm{X}}$ of the $\PHiggs$ boson pair is obtained by recording the value of $\mathcal{F}(\bm{p})$
