@@ -12,7 +12,7 @@ The reconstruction of the mass of the $\PHiggs$ boson pair is based on maximizin
 & \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot
 \, \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
 & \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) 
-\label{eq:likelihood_with_hadRecoil}
+\label{eq:likelihood}
 \end{align}
 with respect to the parameter $m_{\textrm{X}}$, 
 the mass of the heavy particle $\textrm{X}$, which decays into a pair of $\PHiggs$ bosons.
@@ -48,7 +48,7 @@ the vectorial sum of the momenta of all neutrinos produced in the $\Pgt$ lepton 
 which ensure the conservation of momentum in the transverse plane.
 Similarly, the components of its true momentum are given by the relations:
 \begin{equation*}
-\pXhat^{\rec} = & -( \sum_{i=1}^{4} \, \pXhat^{\Pgt(i)} ) \mbox{ and } \pYhat^{\rec} = & -( \sum_{i=1}^{4} \, \pYhat^{\Pgt(i)} ) \, .
+\pXhat^{\rec} = -( \sum_{i=1}^{4} \, \pXhat^{\Pgt(i)} ) \mbox{ and } \pYhat^{\rec} = -( \sum_{i=1}^{4} \, \pYhat^{\Pgt(i)} ) \, .
 \end{equation*}
 The conservation of momentum is enforced by the two $\delta$-functions
 $\delta\left( \pXhat^{\rec} + \sum_{i=1}^{4} \pXhat^{\Pgt(i)} \right)$ and $\delta\left( \pYhat^{\rec} + \sum_{i=1}^{4} \pYhat^{\Pgt(i)} \right)$
@@ -121,7 +121,7 @@ with $\vert\mathcal{M}^{\eff}_{\Pgt \to \tauh\Pnut}\vert^{2}$ and $I_{\inv}$ giv
 
 The knowledge that the four $\Pgt$ leptons originate from the decay of two $\PHiggs$ bosons is incorporated into the likelihood function 
 $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$,
-given by Eq.~(\ref{eq:likelihood_with_hadRecoil}), by suitably chosen constraints.
+given by Eq.~(\ref{eq:likelihood}), by suitably chosen constraints.
 For the purpose of defining the constraints, it is useful to enumerate the $\Pgt$ leptons 
 such that the two $\Pgt$ leptons with indices $i=1$ and $i=2$ (and similarly the two $\Pgt$ leptons with indices $i=3$ and $i=4$) are interpreted as originating from the same $\PHiggs$ boson.
 We then demand that the visible $\Pgt$ decay products corresponding to the indices $i=1$ and $i=2$ have opposite charge,
@@ -133,7 +133,7 @@ The NWA introduces two $\delta$-functions,
  & \delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right) \qquad \mbox{and} \nonumber \\
  & \delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)
 \end{align}
-into Eq.~(\ref{eq:likelihood_with_hadRecoil}).
+into Eq.~(\ref{eq:likelihood}).
 For the purpose of evaluating the $\delta$-functions,
 we make the simplifying assumption that the angle between the vectors $\bm{\hat{p}}^{\vis(i)}$ and $\bm{\hat{p}}^{\inv(i)}$ is negligible.
 The assumption is justified by the fact that at the LHC the $\pT$ of the visible $\Pgt$ decay products are typically large compared to $m_{\Pgt} = 1.777$~\GeV~\cite{PDG}.
@@ -188,37 +188,37 @@ Otherwise, only the root satisfying the condition $0 < z_{3} \leq 1$ is retained
 Expressions for the likelihood function 
 $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$
 obtained after these analytic transformations 
-are given in Eqs.~(\ref{eq:likelihood_with_hadRecoil_thththth}) to~(\ref{eq:likelihood_with_hadRecoil_llll}) in the Appendix.
+are given in Eqs.~(\ref{eq:likelihood_thththth}) to~(\ref{eq:likelihood_llll}) in the Appendix.
 We refer to the different decay channels of the four $\Pgt$ leptons as 
 $\tauh\tauh\tauh\tauh$, $\Plepton\tauh\tauh\tauh$, $\Plepton\Plepton\tauh\tauh$, $\Plepton\Plepton\Plepton\tauh$, and $\Plepton\Plepton\Plepton\Plepton$, 
 where the symbol $\Plepton$ refers to an electron or muon,
 and the neutrinos produced in the $\Pgt$ decays are omitted in the nomenclature.
 The dimension of the integral varies between $5$ for events in the $\tauh\tauh\tauh\tauh$ decay channel and $9$ for events in the $\Plepton\Plepton\Plepton\Plepton$ channel.
 The expressions given in the appendix are for one particular association of reconstructed electrons, muons, and $\tauh$ 
-to the indices $1$, $2$, $3$, and $4$, which enumerate the $\Pgt$ decay products in Eqs.~(\ref{eq:likelihood_with_hadRecoil_thththth}) to~(\ref{eq:likelihood_with_hadRecoil_llll}).
+to the indices $1$, $2$, $3$, and $4$, which enumerate the $\Pgt$ decay products in Eqs.~(\ref{eq:likelihood_thththth}) to~(\ref{eq:likelihood_llll}).
 The expressions for alternative associations can be obtained by appropriate permutations of the indices.
 
 For any given association of reconstructed electrons, muons, and $\tauh$ to the indices $1$, $2$, $3$, and $4$, 
-the best estimate, $m_{\Phiggs\Phiggs}$, for the mass of the $\PHiggs$ boson pair is obtained 
+the best estimate, $m_{\PHiggs\PHiggs}$, for the mass of the $\PHiggs$ boson pair is obtained 
 by finding the value of $m_{\textrm{X}}$ that maximizes the value of 
 $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$.
-in Eq.~(\ref{eq:likelihood_with_hadRecoil_final}).
-Our algorithm evaluates the integral in Eq.~(\ref{eq:likelihood_with_hadRecoil_final}) for a series of mass hypotheses $m_{\textrm{X}^{(i)}$.
-Starting from the initial value $m_{\textrm{X}^{(0)} = 1.0125 \cdot \max (2 \, m_{\PHiggs}, m_{\Phiggs\Phiggs}^{\vis})$,
-where $m_{\Phiggs\Phiggs}^{\vis}) = \sqrt{(\sum_{i=1}^{4} \, E_{\vis(i)})^{2} - (\sum_{i=1}^{4} \, \bm{p}^{\vis(i)})^{2}}$ 
+in Eqs.~(\ref{eq:likelihood_thththth}) to~(\ref{eq:likelihood_llll}).
+Our algorithm evaluates the integral, which appears in these equations, for a series of mass hypotheses $m_{\textrm{X}}^{(i)}$.
+Starting from the initial value $m_{\textrm{X}}^{(0)} = 1.0125 \cdot \max (2 \, m_{\PHiggs}, m_{\PHiggs\PHiggs}^{\vis})$,
+where $m_{\PHiggs\PHiggs}^{\vis}) = \sqrt{(\sum_{i=1}^{4} \, E_{\vis(i)})^{2} - (\sum_{i=1}^{4} \, \bm{p}^{\vis(i)})^{2}}$ 
 denotes the visible mass of the decay products of the four $\Pgt$ leptons,
-the next mass hypothesis in the series is defined by the recursive relation $m_{\textrm{X}^{(i+1)} = (1 + \delta) \cdot m_{\textrm{X}^{(i)}$.
-The step size $\delta = 0.025$ is chosen such that it is small compared to the expected resolution on $m_{\Phiggs\Phiggs}$.
+the next mass hypothesis in the series is defined by the recursive relation $m_{\textrm{X}}^{(i+1)} = (1 + \delta) \cdot m_{\textrm{X}}^{(i)}$.
+The step size $\delta = 0.025$ is chosen such that it is small compared to the expected resolution on $m_{\PHiggs\PHiggs}$.
 The evaluation of the integral is performed numerically, using the VAMP algorithm~\cite{VAMP},
 an improved implementation of the VEGAS algorithm~\cite{VEGAS}.
-For each mass hypothesis $m_{\textrm{X}^{(i)}$, the integrand is evaluated $20\,000$ times.
+For each mass hypothesis $m_{\textrm{X}}^{(i)}$, the integrand is evaluated $20\,000$ times.
 
 We note in passing that our algorithm alternatively supports to perform the integration using a custom implementation
 of the Markov-Chain integration method with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
 The latter allows to reconstruct the $\pT$, pseudo-rapidity $\eta$, and azimuthal angle $\phi$ of the resonance $\textrm{X}$ also.
 In this paper, we focus on the reconstruction of its mass, however.
 
-A remaining issue for the algorithm is that in $\textrm{X} \to \PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events 
+A remaining issue for the algorithm is that in $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events 
 there exist two possibilities for building pairs of $\Pgt$ leptons of opposite charge.
 The ambiguity is resolved, and a unique value of $m_{\PHiggs\PHiggs}$ is obtained for each event, 
 by first discarding pairings for which the mass of the visible $\Pgt$ decay products exceeds $m_{\PHiggs}$
