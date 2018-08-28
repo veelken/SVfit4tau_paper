@@ -1,11 +1,11 @@
 \section{Performance}
 \label{sec:performance}
 
-The performance of the algorithm is quantified in terms of its resolution on $m_{\PHiggs\PHiggs}$.
+The performance of the algorithm is quantified in terms of the resolution achieved in reconstructing $m_{\PHiggs\PHiggs}$.
 The resolution on $m_{\PHiggs\PHiggs}$ is studied using simulated samples of events
 in which a heavy resonance $\textrm{X}$ of mass $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV
-decays via $\PHiggs\PHiggs \to \Pgt^{+}\Pgt^{-}\Pgt^{+}\Pgt^{-}$.
-We expect the resolution to be similar for resonance of spin $0$ and spin $2$,
+decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$.
+We expect the resolution to be similar for resonances of spin $0$ and spin $2$,
 but focus on studying resonances of spin $0$ in this paper.
 Events are generated for proton-proton collisions at $\sqrt{s} = 13$~\TeV centre-of-mass energy,
 using the leading order program MadGraph, in the version MadGraph\_aMCatNLO 2.3.2.2~\cite{MadGraph_aMCatNLO},
@@ -13,49 +13,31 @@ with the NNPDF3.0 set of parton distribution functions~\cite{NNPDF1,NNPDF2,NNPDF
 Parton shower and hadronization processes are modelled using the generator PYTHIA 8.2~\cite{pythia8} with the tune CUETP8M1~\cite{PYTHIA_CUETP8M1tune_CMS}.
 The decays of $\Pgt$ leptons, including polarization effects, are modelled by PYTHIA.
 
-We study the events are studied on generator level.
-Reconstruction effects are simulated by randomly varying the generator-level quantities within their experimental resolution.
-We use the TF given in Ref.~\cite{SVfitMEM} to model these resolutions.
-The resolution on the $\pT$ of $\tauh$ is modelled by the function:
-\begin{equation}
-W_{\Phadron}( \pT^{\vis} | \pThat^{\vis} ) = 
- \begin{cases}
-   \mathcal{N} \, \xi_{1} \, \left( \frac{\alpha_{1}}{x_{1}} - x_{1} - \frac{x - \mu}{\sigma} \right)^{-\alpha_{1}} \,  
- & \mbox{if } x < x_{1} \\
-   \mathcal{N} \, \exp\left( -\frac{1}{2} \, \left( \frac{x - \mu}{\sigma} \right)^{2} \right) \,
- & \mbox{if } x_{1} \leq x \leq x_{2} \\
-   \mathcal{N} \, \xi_{2} \, \left( \frac{\alpha_{2}}{x_{2}} - x_{2} - \frac{x - \mu}{\sigma} \right)^{-\alpha_{2}} \,
- & \mbox{if } x > x_{2} 
- \end{cases}
-\label{eq:tf_tauToHadDecays_pT}
-\end{equation}
-using the values $\mu = 1.0$, $\sigma = 0.03$, $x_{1} = 0.97$, $\alpha_{1} = 7$,
-$x_{2} = 1.03$, and $\alpha_{2} = 3.5$ for its parameters,
-while the $\eta$, $\phi$, and $m_{\vis}$ of $\tauh$ are assumed to be reconstructed with negligible experimental resolution.
-The latter assumption is also made for the $\pT$, $\eta$, and $\phi$ of electrons and muons.
-The momentum of the hadronic recoil is assumed to be reconstructed with a resolution of $10$~\GeV on its components $\pX$ and $\pY$.
-
-Events are selected in the decay channel $\Pgt^{+}\Pgt^{-}\Pgt^{+}\Pgt^{-} \to 2\Plepton + 2\tauh$, 
-where the symbol $\Plepton$ refers to an electron or a muon and the symbol $\tauh$ to the system of hadrons
-produced in a $\Pgt$ lepton decay.
+Events are selected in the decay channel $\Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$
+and are studied on generator level.
+Reconstruction effects are simulated by varying the generator-level quantities within their experimental resolution,
+which we perform by randomly sampling from the TF described in Section~\ref{sec:algorithm}.
 The electrons, muons, and $\tauh$ are required to satisfy conditions on $\pT$ and $\eta$, 
 which are typical for data analyses performed by the ATLAS and CMS collaborations during LHC Run $2$.
 Electrons (muons) are required to be within $\vert\eta\vert < 2.5$ ($\vert\eta\vert < 2.4$).
 The lepton of higher (lower) $\pT$ is required to pass a $\pT$ threshold of $25$ ($15$)~\GeV.
 Each of the two $\tauh$ is required to satisfy $\pT > 20$~\GeV and $\vert\eta\vert < 2.3$.
 
-Distributions in the ratio between the reconstructed value of $m_{\PHiggs\PHiggs}$ 
-and the true mass $m_{\PHiggs\PHiggs}^{\textrm{true}}$ of the $\PHiggs$ boson pair are shown in Fig.~\ref{fig:massDistributions}.
-The distributions are shown separately for chosen and for discarded pairings.
-Each distribution is further subdivided into events in which leptons and taus are correctly associated to $\PHiggs$ boson pairs and events with spurious such pairings.
-The correct pairing is chosen in $79.4$, $98.9$, and $100\%$ of events simulated with $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
-The resolution on $m_{\PHiggs\PHiggs}$ for the chosen pairings amounts to $24.1$, $6.1$, and $5.7\%$,
+The resolution on $m_{\PHiggs\PHiggs}$ is studied in terms of the ratio between the reconstructed value of $m_{\PHiggs\PHiggs}$ 
+and the true mass $m_{\PHiggs\PHiggs}^{\textrm{true}}$ of the $\PHiggs$ boson pair.
+Distributions in this ratio are shown in Fig.~\ref{fig:massDistributions}.
+They are shown separately for chosen 
+(pairings that maximize $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$) 
+and for discarded (other) pairings and for
+events in which leptons and taus are correctly associated to $\PHiggs$ boson pairs and events with spurious such pairings.
+The correct pairing is chosen in $87$, $98$, and $>99\%$ of events simulated with $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
+The resolution on $m_{\PHiggs\PHiggs}$ for the chosen pairings amounts to $22$, $7$, and $9\%$,
 relative to the true mass of the $\PHiggs$ boson pair.
 The mass resolution for resonances of $m_{\textrm{X}} = 300$, near the kinematic threshold $m_{\textrm{X}} \approx 2 \, m_{\PHiggs}$,
-is limited by the fact that the wrong pairing is chosen in $20.6\%$ of events.
-For events in which the correct pairing is chosen, the resolution on $m_{\PHiggs\PHiggs}$ amounts to $3.9$, $5.5$, and $5.7\%$
+is limited by the fact that the wrong pairing is chosen in $13\%$ of events.
+For events in which the correct pairing is chosen, the resolution on $m_{\PHiggs\PHiggs}$ amounts to $4$, $6$, and $8\%$
 for $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
-We leave the optimization of the choice of the correct pairings for resonances of low mass to future studies.
+We leave the optimization of the choice of the correct pairing for resonances of low mass to future studies.
 
 \begin{figure}
 \setlength{\unitlength}{1mm}
@@ -84,7 +66,7 @@ We leave the optimization of the choice of the correct pairings for resonances o
 \caption{
   Distributions in $m_{\PHiggs\PHiggs}$, relative to the true mass $m_{\PHiggs\PHiggs}^{\textrm{true}} = m_{\textrm{X}}$ of the $\PHiggs$ boson pair,
   in events in which a heavy resonance $\textrm{X}$ of mass $m_{\textrm{X}} = 300$ (a,b), $500$ (c,d), and $800$~\GeV (e,f)
-  decays via $\PHiggs\PHiggs \to \Pgt^{+}\Pgt^{-}\Pgt^{+}\Pgt^{-} \to 2\Plepton + 2\tauh$.
+  decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$.
   The distributions are shown separately for the chosen (a,c,e) and for the discarded (b,d,f) pairings,
   and are further subdivided into correct and spurious pairings.
   The axis of abscissae ranges from $0.2$ to $5$.
@@ -92,4 +74,4 @@ We leave the optimization of the choice of the correct pairings for resonances o
 \label{fig:massDistributions}
 \end{figure}
 
-The algorithm requires about $0.5$s of CPU time per event to reconstruct $m_{\PHiggs\PHiggs}$.
+The algorithm requires typically $2$s of CPU time per event to reconstruct $m_{\PHiggs\PHiggs}$.

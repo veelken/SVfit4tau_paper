@@ -1,167 +1,231 @@
 \section{The algorithm}
 \label{sec:algorithm}
 
-The reconstruction of $m_{\PHiggs\PHiggs}$ is based on maximizing the likelihood function:
+The reconstruction of the mass of the $\PHiggs$ boson pair is based on maximizing the likelihood function:
 \begin{align}
 &
 \mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})
-= \frac{32\pi^{4}}{s} \, \int \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
-& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
-& \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, .
+= \frac{32\pi^{4}}{s} \, \int \, d\Phi_{n} \, \cdot \delta\left( (\sum_{i=1}^{4} \, \hat{E}_{\Pgt(i)})^{2} - (\sum_{i=1}^{4} \, \bm{\hat{p}}^{\Pgt(i)})^{2} - m_{\textrm{X}} \right) \cdot \nonumber \\
+\delta\left( \pXhat^{\rec} + \sum_{i=1}^{4} \pXhat^{\Pgt(i)} \right) \cdot \delta\left( \pYhat^{\rec} + \sum_{i=1}^{4} \pYhat^{\Pgt(i)} \right) \cdot \nonumber \\
+& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, \cdot 
+\, \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, \cdot \nonumber \\
+& \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot
+\, \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
+& \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) 
 \label{eq:likelihood_with_hadRecoil}
 \end{align}
 with respect to the parameter $m_{\textrm{X}}$, 
-the mass of the heavy particle $\textrm{X}$ that decays into a pair of $\PHiggs$ bosons.
+the mass of the heavy particle $\textrm{X}$, which decays into a pair of $\PHiggs$ bosons.
 We refer to the electron, muon, or hadrons produced in each $\Pgt$ decay as the ``visible'' $\Pgt$ decay products.
-Their momentum is denoted by the symbol $\bm{p}^{\vis(i)}$ ($i = 1,\ldots,4$).
+Their energy (momentum) is denoted by the symbol $E_{\vis(i)}$ ($\bm{p}^{\vis(i)}$), where the index $i$ ranges between $1$ and $4$.
+The symbol $E_{\Pgt(i)}$ ($\bm{p}^{\Pgt(i)}$) denotes the energy (momentum) of the $i$-th $\Pgt$ lepton.
 Bold letters represent vector quantities.
+The true values of energies and momenta are indicated by symbols with a hat,
+while symbols without a hat represent measured values.
 The symbol $d\Phi_{n} = \prod_{i}^{n} \,
-\frac{d^{3}\bm{p}^{(i)}}{(2\pi)^{3} \, 2 E_{(i)}}$ denotes the differential $n$-particle phase space element,
-where $n$ refers to the number of particles in the final state.
-The symbol $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
+\frac{d^{3}\bm{p}^{(i)}}{(2\pi)^{3} \, 2 E_{(i)}}$ denotes the differential $n$-particle phase-space element,
+where $n$ refers to the number of particles in the final state,
+while the symbol $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
 denotes the squared modulus of the ME for the decay of the $i$-th $\Pgt$ lepton.
+The $\delta$-function 
+$\delta\left( (\sum_{i=1}^{4} \, E_{\Pgt(i)})^{2} - (\sum_{i=1}^{4} \, \bm{\hat{p}}^{\Pgt(i)})^{2} - m_{\textrm{X}} \right)$
+represents the condition that the mass of the system of four $\Pgt$ leptons equals a given value of the parameter $m_{\textrm{X}}$.
+
 The functions $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are referred to as ``transfer functions'' (TF).
-They quantify the experimental resolutions with which the momenta of particles reconstructed in the event are measured.
-The function $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ represents the resolutions for measuring the momenta of the visible $\Pgt$ decay products,
-while the function $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ quantifies the resolution for measuring the momentum, in the transverse plane, of the hadronic recoil.
+They quantify the experimental resolutions with which the momenta of particles are measured in the detector.
 The nomenclature $W(\bm{p}|\bm{\hat{p}})$ has the following meaning:
 The value of the function $W(\bm{p}|\bm{\hat{p}})$ represents the probability density to observe the measured momentum $\bm{p}$,
 given that its the true value of the momentum is $\bm{\hat{p}}$.
-The TF $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are taken from Ref.~\cite{SVfitMEM}.
+The function $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ represents the resolution for measuring the momentum of the visible $\Pgt$ decay products,
+while the function $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ quantifies the resolution for measuring the momentum, in the transverse plane, of the hadronic recoil.
+
 The hadronic recoil is defined as the vectorial sum of all particles in the event that do not originate from the decay of the two $\PHiggs$ bosons.
-The components $\pX^{\rec}$ and $\pY^{\rec}$ of its momentum are related to the corresponding components $\METx$ and $\METy$ of the ``missing transverse momentum'',
+The components $\pX^{\rec}$ and $\pY^{\rec}$ of its measured momentum are related to the corresponding components $\METx$ and $\METy$ of the ``missing transverse momentum'',
 the vectorial sum of the momenta of all neutrinos produced in the $\Pgt$ lepton decays, via the relations:
-\begin{align}
-\METx = & -( \pX^{\rec} + \pX^{\vis(1)} + \pX^{\vis(2)} + \pX^{\vis(3)} + \pX^{\vis(4)} ) \nonumber \\
-\METy = & -( \pY^{\rec} + \pY^{\vis(1)} + \pY^{\vis(2)} + \pY^{\vis(3)} + \pY^{\vis(4)} ) \nonumber \, .
-\end{align}
+\begin{equation*}
+\pX^{\rec} = -( \METx + \sum_{i=1}^{4} \, \pX^{\vis(i)} ) \mbox{ and } \pY^{\rec} = -( \METy + \sum_{i=1}^{4} \, \pY^{\vis(i)} ) \, ,
+\end{equation*}
+which ensure the conservation of momentum in the transverse plane.
+Similarly, the components of its true momentum are given by the relations:
+\begin{equation*}
+\pXhat^{\rec} = & -( \sum_{i=1}^{4} \, \pXhat^{\Pgt(i)} ) \mbox{ and } \pYhat^{\rec} = & -( \sum_{i=1}^{4} \, \pYhat^{\Pgt(i)} ) \, .
+\end{equation*}
+The conservation of momentum is enforced by the two $\delta$-functions
+$\delta\left( \pXhat^{\rec} + \sum_{i=1}^{4} \pXhat^{\Pgt(i)} \right)$ and $\delta\left( \pYhat^{\rec} + \sum_{i=1}^{4} \pYhat^{\Pgt(i)} \right)$
+in the integrand.
+
+The TF for the visible $\Pgt$ decay products and for the hadronic recoil are taken from Ref.~\cite{SVfitMEM}.
+The resolution on the $\pT$ of the system of hadrons produced in $\Pgt$ decays is modelled by the function:
+\begin{equation}
+W_{\Phadron}( \pT^{\vis} | \pThat^{\vis} ) = 
+ \begin{cases}
+   \mathcal{N} \, \xi_{1} \, \left( \frac{\alpha_{1}}{x_{1}} - x_{1} - \frac{x - \mu}{\sigma} \right)^{-\alpha_{1}} \,  
+ & \mbox{if } x < x_{1} \\
+   \mathcal{N} \, \exp\left( -\frac{1}{2} \, \left( \frac{x - \mu}{\sigma} \right)^{2} \right) \,
+ & \mbox{if } x_{1} \leq x \leq x_{2} \\
+   \mathcal{N} \, \xi_{2} \, \left( \frac{\alpha_{2}}{x_{2}} - x_{2} - \frac{x - \mu}{\sigma} \right)^{-\alpha_{2}} \, 
+ & \mbox{if } x > x_{2} \, ,
+ \end{cases}
+\label{eq:tf_tauToHadDecays_pT}
+\end{equation}
+where we use the values $\mu = 1.0$, $\sigma = 0.03$, $x_{1} = 0.97$, $\alpha_{1} = 7$,
+$x_{2} = 1.03$, and $\alpha_{2} = 3.5$ for its parameters.
+The $\eta$, $\phi$, and $m_{\vis}$ of $\tauh$ are assumed to be reconstructed with negligible experimental resolution.
+The latter assumption is also made for the $\pT$, $\eta$, and $\phi$ of electrons and muons.
+The momentum of the hadronic recoil is modelled by a two-dimensional normal distribution
+and assumed to be reconstructed with a resolution of $10$~\GeV independently on each of its components $\pX$ and $\pY$.
 
 The number of particles in the final state, $n$, depends on how many $\Pgt$ leptons decay to electrons or muons 
 and how many decay to hadrons.
 Following the formalism developed in Ref.~\cite{SVfitMEM}, 
-we treat hadronic $\Pgt$ decays as two-body decays into a hadronic system $\tauh$ and a $\Pnut$.
-Correspondingly, $n$ increases by $2$ for each leptonic ($\Pgt \to \enunu$ or $\Pgt \to \mununu$) and by $3$ units for each hadronic ($\Pgt \to \textrm{hadrons} + \Pnut$) $\Pgt$ decay.
-Particles that are part of the hadronic recoil do not contribute to the differential $n$-particle phase space element $d\Phi_{n}$.
-The dimension of the integral over the differential $n$-particle phase space element $d\Phi_{n}$ thus
-varies between $8$ for events that decay via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \tauh\tauh\tauh\tauh$ 
-and $12$ for events that decay via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\Plepton\Plepton$,
-where the symbol $\Plepton$ refers to either an electron or a muon.
+we treat $\Pgt$ decays to hadrons as two-body decays into a hadronic system $\tauh$ and a $\Pnut$.
+Correspondingly, $n$ increases by $3$ for each $\Pgt$ lepton that decays to an electron or a muon ($\Pgt \to \enunu$ or $\Pgt \to \mununu$)
+and by $2$ units for each $\Pgt$ lepton that decays to hadrons ($\Pgt \to \tauh + \Pnut$).
+We refer to the former (latter) types of decays as ``leptonic'' (``hadronic'') $\Pgt$ decays.
+Particles that are part of the hadronic recoil are treated as described in Section~2.2 of Ref.~\cite{SVfitMEM} 
+and do not count towards $n$.
 
-The dimensionality of the integration over the $n$-particle phase space element $d\Phi_{n}$ 
+The dimensionality of the integration over the $n$-particle phase-space element $d\Phi_{n}$ 
 can be reduced by means of analytic transformations. 
 Two (three) variables are sufficient to fully parametrize the kinematics of hadronic (leptonic) $\Pgt$ decays.
-We choose to parametrize hadronic $\Pgt$ decays by the variables $z$ and $\phi_{\inv}$,
+Following Ref.~\cite{SVfitMEM}, we choose to parametrize hadronic $\Pgt$ decays by the variables $z$ and $\phi_{\inv}$,
 and leptonic $\Pgt$ decays by the variables $z$, $\phi_{\inv}$, and $m_{\inv}$.
 The variable $z$ corresponds to the fraction of $\Pgt$ lepton energy, in the laboratory frame, that is carried by the visible $\Pgt$ decay products.
-The variable $\phi_{\inv}$ specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector,
-where the vector $\bm{p}^{\vis}$ refers to the momentum of the visible $\Pgt$ decay products,
-and we denote by the vector $\bm{p}^{\inv}$ the momentum of the $\Pnut$ (the vectorial sum of the momenta of the two neutrinos) produced in hadronic (leptonic) $\Pgt$ decays.
+The variable $\phi_{\inv}$ specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector (see Fig.~4 in Ref.~\cite{SVfitMEM} for illustration),
+where the vector $\bm{p}^{\inv}$ refers to the vectorial sum of the momenta of the two neutrinos (to the momentum of the single $\Pnut$) produced in leptonic (hadronic) $\Pgt$ decays.
 The variable $m_{\inv}$ denotes the mass of the neutrino pair produced in leptonic $\Pgt$ decays.
+
 Expressions for the product of the differential $n$-particle phase space element $d\Phi_{n}$ 
 with the squared moduli $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
-of the ME for the $\Pgt$ decays that are obtained by these analytic transformations are given by Eq.~[33] in Ref.~\cite{SVfitMEM}.
+of the ME for the $\Pgt$ decays, 
+obtained by the aforementioned transformations, are given by Eq.~(33) in Ref.~\cite{SVfitMEM}.
 The expressions read:
 \begin{align}
 \vert \BW_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\tilde{p}}) \vert^{2} \, d\Phi^{(i)}_{\tauhnu} 
- = & \, \frac{\pi}{m_{\Pgt}\Gamma_{\Pgt}} \,
+ = & \, \frac{\pi}{m_{\Pgt} \, \Gamma_{\Pgt}} \,
  f_{\Phadron}\left(\bm{\hat{p}}^{\vis(i)}, m^{\vis(i)},
-   \bm{\hat{p}}^{\inv(i)}\right) \, \frac{d^{3}\bm{\hat{p}}^{\vis}}{2 \hat{E}_{\vis}} \, dz \, d\phi_{\inv} \nonumber \\
+   \bm{\hat{p}}^{\inv(i)}\right) \, \frac{d^{3}\bm{\hat{p}}^{\vis}}{2 \hat{E}_{\vis}} \, dz \, d\phi_{\inv} \qquad \mbox{and} \nonumber \\
 \vert \BW_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\tilde{p}}) \vert^{2} \, d\Phi^{(i)}_{\ellnunu} 
- = & \, \frac{\pi}{m_{\Pgt}\Gamma_{\Pgt}} \, f_{\ell}\left(\bm{\hat{p}}^{\vis(i)},
+ = & \, \frac{\pi}{m_{\Pgt} \, \Gamma_{\Pgt}} \, f_{\ell}\left(\bm{\hat{p}}^{\vis(i)},
  m^{\vis(i)}, \bm{\hat{p}}^{\inv(i)}\right) \, \frac{d^{3}\bm{\hat{p}}^{\vis}}{2 \hat{E}_{\vis}} \, dz \, dm^{2}_{\inv} \, d\phi_{\inv}
  \nonumber \, ,
 \end{align}
-where the functions $f_{\Phadron}$ and $f_{\ell}$ given by:
+where the functions $f_{\Phadron}$ and $f_{\ell}$ are defined as:
 \begin{align}
 f_{h}\left(\bm{p}^{\vis}, m_{\vis}, \bm{p}^{\inv}\right) = &
-  \frac{\vert\mathcal{M}^{\eff}_{\Pgt \to \tauh\Pnut}\vert^{2}}{256\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \\
+  \frac{\vert\mathcal{M}^{\eff}_{\Pgt \to \tauh\Pnut}\vert^{2}}{256\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \qquad \mbox{and} \nonumber \\
 f_{\Plepton}\left(\bm{p}^{\vis}, m_{\vis}, \bm{p}^{\inv}\right) = &
-  \frac{I_{\inv}}{512\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \, . 
+  \frac{I_{\inv}}{512\pi^{6}} \cdot \frac{E_{\vis}}{\vert\bm{p}^{\vis}\vert \, z^{2}} \nonumber \, , 
 \end{align}
+with $\vert\mathcal{M}^{\eff}_{\Pgt \to \tauh\Pnut}\vert^{2}$ and $I_{\inv}$ given by Eqs.~(13) and (63) in Ref.~\cite{SVfitMEM}, respectively.
 
 The knowledge that the four $\Pgt$ leptons originate from the decay of two $\PHiggs$ bosons is incorporated into the likelihood function 
 $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$,
-given by Eq.~\ref{eq:likelihood_with_hadRecoil}, by suitably chosen constraints.
+given by Eq.~(\ref{eq:likelihood_with_hadRecoil}), by suitably chosen constraints.
 For the purpose of defining the constraints, it is useful to enumerate the $\Pgt$ leptons 
-such that the $\Pgt$ leptons with indices $i=1$ and $i=2$ are interpreted as originating from one and the same $\PHiggs$ boson.
+such that the two $\Pgt$ leptons with indices $i=1$ and $i=2$ (and similarly the two $\Pgt$ leptons with indices $i=3$ and $i=4$) are interpreted as originating from the same $\PHiggs$ boson.
 We then demand that the visible $\Pgt$ decay products corresponding to the indices $i=1$ and $i=2$ have opposite charge,
 and require the same for the visible $\Pgt$ decay products corresponding to the indices $i=3$ and $i=4$.
 As the width of the $\PHiggs$ boson is known to be small~\cite{HIG-14-002,Aad:2015xua} compared to the experimental resolution that we aim to achieve on $m_{\PHiggs\PHiggs}$,
 we choose to neglect it and use the narrow-width approximation (NWA) for each $\PHiggs$ boson.
 The NWA introduces two $\delta$-functions, 
+\begin{align}
+ & \delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right) \qquad \mbox{and} \nonumber \\
+ & \delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)
+\end{align}
+into Eq.~(\ref{eq:likelihood_with_hadRecoil}).
+For the purpose of evaluating the $\delta$-functions,
+we make the simplifying assumption that the angle between the vectors $\bm{\hat{p}}^{\vis(i)}$ and $\bm{\hat{p}}^{\inv(i)}$ is negligible.
+The assumption is justified by the fact that at the LHC the $\pT$ of the visible $\Pgt$ decay products are typically large compared to $m_{\Pgt} = 1.777$~\GeV~\cite{PDG}.
+With this approximation, the $\delta$-functions simplify to:
 \begin{equation*}
-\delta\left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)})^{2} - m_{\PHiggs}^{2} \right)
+\delta\left(\frac{m_{\vis(12)}}{z_{1} \, z_{2}} - m_{\PHiggs}^{2}\right) \mbox{ and } \delta\left(\frac{m_{\vis(34)}}{z_{3} \, z_{4}} - m_{\PHiggs}^{2}\right) \, ,
 \end{equation*}
-and 
+where we denote by the symbol $m_{\vis(ij)}$ the ``visible mass'' of the decay products of $\Pgt$ leptons $i$ and $j$:
 \begin{equation*}
-\delta\left( (\hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} - m_{\PHiggs}^{2} \right)
+m_{\vis(ij)} = (\hat{E}_{\vis(i)} + \hat{E}_{\vis(i)})^{2} - (\bm{\hat{p}}^{\vis(i)} + \bm{\hat{p}}^{\vis(j)})^{2} \, .
 \end{equation*}
-into Eq.~\ref{eq:likelihood_with_hadRecoil}.
-We make the simplifying assumption that the angle between the visible $\Pgt$ decay products and the neutrino is negligible for each $\Pgt$ lepton $i$,
-\ie assume that the vectors $\bm{\hat{p}}^{\vis(i)}$ and $\bm{\hat{p}}^{\inv(i)}$ are parallel.
-The assumption is justified by the fact that $\pT$ of the visible $\Pgt$ decay products at the LHC are typically large compared to $m_{\Pgt} = 1.777$~\GeV~\cite{PDG}.
-With this approximation, the $\delta$-functions simplify to 
-\begin{equation*}
-\delta\left(\frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{z_{1} \, z_{2}} - m_{\PHiggs}^{2}\right)
-\end{equation*}
-and 
-\begin{equation*}
-\delta\left(\frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{z_{3} \, z_{4}} - m_{\PHiggs}^{2}\right) \, .
-\end{equation*}
-They are used to eliminate the integration over the variables $z_{2}$ and $z_{4}$.
+The $\delta$-functions are used to eliminate the integration over the variables $z_{2}$ and $z_{4}$.
 The $\delta$-function rule:
 \begin{equation*} 
-\delta \left( g(x) \right) = \sum_{k} \frac{\delta \left( x - x_{k}
-  \right)}{\vert g'(x_{k}) \vert} 
+\delta \left( g(x) \right) = \sum_{k} \, \frac{\delta \left( x - x_{k}
+  \right)}{\vert g'(x_{k}) \vert} \, ,
 \end{equation*}
-yields the two factors $m_{\PHiggs}^{2}/z_{2}$ and $m_{\PHiggs}^{2}/z_{4}$,
-with 
+where the sum extends over all roots $x_{k}$ of the function $g(x)$,
+yields the two factors:
 \begin{equation*}
-z_{2} = \frac{(\hat{E}_{\vis(1)} + \hat{E}_{\vis(2)})^{2} - (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\vis(2)})^{2}}{m_{\PHiggs}^{2} \, z_{1}}
+\frac{z_{2}}{m_{\PHiggs}^{2}} \mbox{ and } \frac{z_{4}}{m_{\PHiggs}^{2}} \, ,
 \end{equation*}
-and 
-\begin{equation*} 
-z_{4} = \frac{(\hat{E}_{\vis(3)} + \hat{E}_{\vis(4)})^{2} - (\bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\vis(4)})^{2}}{m_{\PHiggs}^{2} \, z_{3}} \, .
+with the roots:
+\begin{equation*}
+z_{2} = \frac{m_{\vis(12)}}{m_{\PHiggs}^{2} \, z_{1}} \mbox{ and } z_{4} = \frac{m_{\vis(34)}}{m_{\PHiggs}^{2} \, z_{3}} \, .
 \end{equation*}
 
-The evaluation of the remaining integral is performed in analogy with the procedure described in Section~3 of Ref.~\cite{SVfitMEM}.
-Instead of computing the likelihood function for a series of values for the parameter $m_{\textrm{X}}$ and finding the value that maximizes the likelihood,
-the following integral is computed:
+The $\delta$-function 
+$\delta\left( (\sum_{i=1}^{4} \, E_{\Pgt(i)})^{2} - (\sum_{i=1}^{4} \, \bm{\hat{p}}^{\Pgt(i)})^{2} - m_{\textrm{X}} \right)$
+is used to eliminate the integration over the variable $z_{3}$,
+yielding the factor:
+\begin{equation}
+\lvert \frac{z_{1} \, z_{3}^{2}}{b \, z_{3}^{2} - c} \rvert \, ,
+\label{eq:deltaFuncFactor}
+\end{equation}
+with the two roots:
+\begin{equation*}
+z_{3}^{(+)} = \frac{a + \sqrt{b}}{c} \mbox{ and } z_{3}^{(+)} = \frac{a - \sqrt{b}}{c} \, ,
+\end{equation*}
+where the following definitions are used:
 \begin{align}
-&
-\mathcal{L}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec})
-= \frac{32\pi^{4}}{s} \, \int \, dm_{\PHiggs} \, d\Phi_{n} \, \cdot \hspace{2cm} \nonumber \\
-& \qquad \vert \BW^{(1)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(1)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(1)}|\bm{\hat{p}}^{\vis(1)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(2)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(2)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(2)}|\bm{\hat{p}}^{\vis(2)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(3)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(3)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(3)}|\bm{\hat{p}}^{\vis(3)}) \, \cdot \nonumber \\
-& \qquad \vert \BW^{(4)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(4)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2} \cdot W(\bm{p}^{\vis(4)}|\bm{\hat{p}}^{\vis(4)}) \, \cdot \nonumber \\
-& \qquad W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} ) \, \cdot \mathcal{F}(\bm{p}) \, ,
-\label{eq:cSVfit_with_hadRecoil}
+a = & (m_{\textrm{X}}^{2} - 2 \, m_{\PHiggs}^{2}) \, z_{1} \nonumber \\
+b = & \frac{m_{\vis(14)}^{2}}{m_{\vis(34)}^{2}} \, m_{\PHiggs}^{2} + \frac{m_{\vis(24)}^{2}}{m_{\vis(12)}^{2} \, m_{\vis(34)}^{2}} \, m_{\PHiggs}^{4} \, z_{1}^{2} \nonumber \\
+c = & m_{\vis(13)}^{2} + \frac{m_{\vis(23)}^{2}}{m_{\vis(12)}^{2}} \, z_{1}^{2} \, .
 \end{align}
-with 
-\begin{align}
-\mathcal{F}(\bm{p}) = & \left( (\hat{E}_{\vis(1)} + \hat{E}_{\inv(1)} + \hat{E}_{\vis(2)} + \hat{E}_{\inv(2)} + \hat{E}_{\vis(3)} + \hat{E}_{\inv(3)} + \hat{E}_{\vis(4)} + \hat{E}_{\inv(4)})^{2} \right. \nonumber \\
-& \qquad - \left. (\bm{\hat{p}}^{\vis(1)} + \bm{\hat{p}}^{\inv(1)} + \bm{\hat{p}}^{\vis(2)} + \bm{\hat{p}}^{\inv(2)} + \bm{\hat{p}}^{\vis(3)} + \bm{\hat{p}}^{\inv(3)} + \bm{\hat{p}}^{\vis(4)} + \bm{\hat{p}}^{\inv(4)})^{2} \right)^{\frac{1}{2}} \, .
-\end{align}
-The evaluation of the integral is performed using a custom implementation of the Markov chain Monte Carlo integration method 
-with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
-The estimate for the mass $m_{\textrm{X}}$ of the $\PHiggs$ boson pair is obtained by recording the value of $\mathcal{F}(\bm{p})$
-for each evaluation of the integrand in Eq.~\ref{eq:cSVfit_with_hadRecoil} by the Markov chain and taking the median of the series of $\mathcal{F}(\bm{p})$ values.
-The total number of evaluations of the integrand, referred to as Markov chain ``states'', amounts to $100\,000$ per event. 
-The first $10\,000$ evaluations are used as ``burn-in'' period to reach the equilibrium distribution of the Markov chain and are excluded from the computation of the median.
-The transitions between subsequent states of the Markov chain are computed for the case that $\mathcal{F}(\bm{p}) \equiv 1$.
+The requirement that the energies of electrons, muons, and hadrons as well as of the neutrinos produced in the $\Pgt$ decays are positive
+restricts the variable $z_{3}$ to the range $0 < z_{3} \leq 1$.
+In case both roots are within this range,
+the integrand is evaluated for each root separately and the values obtained for each root are summed.
+Otherwise, only the root satisfying the condition $0 < z_{3} \leq 1$ is retained.
 
-We note in passing that our implementation provides flexibility to choose different functions $\mathcal{F}(\bm{p})$, 
-which allows to also reconstruct the $\pT$, $\eta$, and $\phi$ of the $\PHiggs$ boson pair,
-while in this paper we will focus on the mass $m_{\PHiggs\PHiggs}$.
+Expressions for the likelihood function 
+$\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$
+obtained after these analytic transformations 
+are given in Eqs.~(\ref{eq:likelihood_with_hadRecoil_thththth}) to~(\ref{eq:likelihood_with_hadRecoil_llll}) in the Appendix.
+We refer to the different decay channels of the four $\Pgt$ leptons as 
+$\tauh\tauh\tauh\tauh$, $\Plepton\tauh\tauh\tauh$, $\Plepton\Plepton\tauh\tauh$, $\Plepton\Plepton\Plepton\tauh$, and $\Plepton\Plepton\Plepton\Plepton$, 
+where the symbol $\Plepton$ refers to an electron or muon,
+and the neutrinos produced in the $\Pgt$ decays are omitted in the nomenclature.
+The dimension of the integral varies between $5$ for events in the $\tauh\tauh\tauh\tauh$ decay channel and $9$ for events in the $\Plepton\Plepton\Plepton\Plepton$ channel.
+The expressions given in the appendix are for one particular association of reconstructed electrons, muons, and $\tauh$ 
+to the indices $1$, $2$, $3$, and $4$, which enumerate the $\Pgt$ decay products in Eqs.~(\ref{eq:likelihood_with_hadRecoil_thththth}) to~(\ref{eq:likelihood_with_hadRecoil_llll}).
+The expressions for alternative associations can be obtained by appropriate permutations of the indices.
 
-A remaining issue for the algorithm is that in $\textrm{X} \to \PHiggs\PHiggs \to \Pgt^{+}\Pgt^{-}\Pgt^{+}\Pgt^{-}$ events 
+For any given association of reconstructed electrons, muons, and $\tauh$ to the indices $1$, $2$, $3$, and $4$, 
+the best estimate, $m_{\Phiggs\Phiggs}$, for the mass of the $\PHiggs$ boson pair is obtained 
+by finding the value of $m_{\textrm{X}}$ that maximizes the value of 
+$\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$.
+in Eq.~(\ref{eq:likelihood_with_hadRecoil_final}).
+Our algorithm evaluates the integral in Eq.~(\ref{eq:likelihood_with_hadRecoil_final}) for a series of mass hypotheses $m_{\textrm{X}^{(i)}$.
+Starting from the initial value $m_{\textrm{X}^{(0)} = 1.0125 \cdot \max (2 \, m_{\PHiggs}, m_{\Phiggs\Phiggs}^{\vis})$,
+where $m_{\Phiggs\Phiggs}^{\vis}) = \sqrt{(\sum_{i=1}^{4} \, E_{\vis(i)})^{2} - (\sum_{i=1}^{4} \, \bm{p}^{\vis(i)})^{2}}$ 
+denotes the visible mass of the decay products of the four $\Pgt$ leptons,
+the next mass hypothesis in the series is defined by the recursive relation $m_{\textrm{X}^{(i+1)} = (1 + \delta) \cdot m_{\textrm{X}^{(i)}$.
+The step size $\delta = 0.025$ is chosen such that it is small compared to the expected resolution on $m_{\Phiggs\Phiggs}$.
+The evaluation of the integral is performed numerically, using the VAMP algorithm~\cite{VAMP},
+an improved implementation of the VEGAS algorithm~\cite{VEGAS}.
+For each mass hypothesis $m_{\textrm{X}^{(i)}$, the integrand is evaluated $20\,000$ times.
+
+We note in passing that our algorithm alternatively supports to perform the integration using a custom implementation
+of the Markov-Chain integration method with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
+The latter allows to reconstruct the $\pT$, pseudo-rapidity $\eta$, and azimuthal angle $\phi$ of the resonance $\textrm{X}$ also.
+In this paper, we focus on the reconstruction of its mass, however.
+
+A remaining issue for the algorithm is that in $\textrm{X} \to \PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events 
 there exist two possibilities for building pairs of $\Pgt$ leptons of opposite charge.
 The ambiguity is resolved, and a unique value of $m_{\PHiggs\PHiggs}$ is obtained for each event, 
 by first discarding pairings for which the mass of the visible $\Pgt$ decay products exceeds $m_{\PHiggs}$
 and then selecting the pairing for which the integrand in Eq.~\ref{eq:cSVfit_with_hadRecoil} attains the maximal value.
-We will demonstrate in Section~\ref{sec:performance} that this choice yields the correct pairing in the vast majority of events.
+We will demonstrate in Section~\ref{sec:performance} that this choice yields the correct pairing for the majority of events.
+
+
+
+
 
