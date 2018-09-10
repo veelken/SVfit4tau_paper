@@ -2,9 +2,10 @@
 \label{sec:performance}
 
 The performance of the algorithm is quantified in terms of the resolution achieved in reconstructing $m_{\PHiggs\PHiggs}$.
-The resolution on $m_{\PHiggs\PHiggs}$ is studied using simulated samples of events
-in which a heavy resonance $\textrm{X}$ of mass $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV
-decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$.
+The resolution is studied using simulated samples of events
+in which a heavy resonance $\textrm{X}$ decays into a pair of $\PHiggs$ bosons,
+and the $\PHiggs$ bosons subsequently decay to four $\Pgt$ leptons.
+Samples are produced for $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV.
 We expect the resolution to be similar for resonances of spin $0$ and spin $2$,
 but focus on studying resonances of spin $0$ in this paper.
 Events are generated for proton-proton collisions at $\sqrt{s} = 13$~\TeV centre-of-mass energy,
@@ -13,10 +14,14 @@ with the NNPDF3.0 set of parton distribution functions~\cite{NNPDF1,NNPDF2,NNPDF
 Parton shower and hadronization processes are modelled using the generator PYTHIA 8.2~\cite{pythia8} with the tune CUETP8M1~\cite{PYTHIA_CUETP8M1tune_CMS}.
 The decays of $\Pgt$ leptons, including polarization effects, are modelled by PYTHIA.
 
-Events are selected in the decay channel $\Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$
-and are studied on generator level.
+We select events in the decay channel $\textrm{X} \to \PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$
+and study them on generator level.
 Reconstruction effects are simulated by varying the generator-level quantities within their experimental resolution,
-which we perform by randomly sampling from the TF described in Section~\ref{sec:algorithm}.
+which we perform by randomly sampling from the TF 
+$W_{\Phadron}( \pT^{\vis} | \pThat^{\vis} )$
+and
+$W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$
+described in Section~\ref{sec:algorithm}.
 The electrons, muons, and $\tauh$ are required to satisfy conditions on $\pT$ and $\eta$, 
 which are typical for data analyses performed by the ATLAS and CMS collaborations during LHC Run $2$.
 Electrons (muons) are required to be within $\vert\eta\vert < 2.5$ ($\vert\eta\vert < 2.4$).
@@ -27,10 +32,10 @@ The resolution on $m_{\PHiggs\PHiggs}$ is studied in terms of the ratio between 
 and the true mass $m_{\PHiggs\PHiggs}^{\textrm{true}}$ of the $\PHiggs$ boson pair.
 Distributions in this ratio are shown in Fig.~\ref{fig:massDistributions}.
 They are shown separately for chosen 
-(pairings that maximize $\mathcal{P}(\bm{p}^{\vis(1)},\bm{p}^{\vis(2)},\bm{p}^{\vis(3)},\bm{p}^{\vis(4)};\pX^{\rec},\pY^{\rec}|m_{\textrm{X}})$) 
+(pairings that maximize the likelihood function $\mathcal{P}$) 
 and for discarded (other) pairings and for
-events in which leptons and taus are correctly associated to $\PHiggs$ boson pairs and events with spurious such pairings.
-The correct pairing is chosen in $87$, $98$, and $>99\%$ of events simulated with $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
+events in which electrons, muons, and $\tauh$ are correctly associated to $\PHiggs$ boson pairs and events with spurious such pairings.
+The correct pairing is chosen in $87$, $98$, and $>99\%$ of the events with $m_{\textrm{X}} = 300$, $500$, and $800$~\GeV, respectively.
 The resolution on $m_{\PHiggs\PHiggs}$ for the chosen pairings amounts to $22$, $7$, and $9\%$,
 relative to the true mass of the $\PHiggs$ boson pair.
 The mass resolution for resonances of $m_{\textrm{X}} = 300$, near the kinematic threshold $m_{\textrm{X}} \approx 2 \, m_{\PHiggs}$,
@@ -66,7 +71,7 @@ We leave the optimization of the choice of the correct pairing for resonances of
 \caption{
   Distributions in $m_{\PHiggs\PHiggs}$, relative to the true mass $m_{\PHiggs\PHiggs}^{\textrm{true}} = m_{\textrm{X}}$ of the $\PHiggs$ boson pair,
   in events in which a heavy resonance $\textrm{X}$ of mass $m_{\textrm{X}} = 300$ (a,b), $500$ (c,d), and $800$~\GeV (e,f)
-  decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$.
+  decays via $\textrm{X} \to \PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt \to \Plepton\Plepton\tauh\tauh$.
   The distributions are shown separately for the chosen (a,c,e) and for the discarded (b,d,f) pairings,
   and are further subdivided into correct and spurious pairings.
   The axis of abscissae ranges from $0.2$ to $5$.

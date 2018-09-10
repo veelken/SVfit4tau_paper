@@ -5,28 +5,29 @@ The discovery of a Higgs ($\PHiggs$) boson by the ATLAS and CMS experiments at t
 represents a major step towards our understanding of electroweak symmetry breaking (EWSB) 
 and of the mechanism that generates the masses of quarks and leptons, the particles that constitute the ``ordinary'' matter in our universe.
 In a combined analysis of the data recorded by ATLAS and CMS, 
-the mass of the $\PHiggs$ boson has been measured to be $125.09 \pm 0.24$~\GeV~\cite{HIG-14-042}.
+the mass, $m_{\PHiggs}$, of the $\PHiggs$ boson has been measured to be $m_{\PHiggs} = 125.09 \pm 0.24$~\GeV~\cite{HIG-14-042}.
 The Standard Model (SM) of particle physics makes precise predictions for all properties of the $\PHiggs$ boson, given its mass.
 So far, all properties that have been measured agree with the expectation for a SM $\PHiggs$ boson~\cite{HIG-15-002}.
-The rate for the decay of the discovered particle into a pair of $\Pgt$ leptons has been measured recently
+The rate for its decay to a pair of $\Pgt$ leptons has been measured recently
 and found to be consistent with the SM expectation within the uncertainties of these measurements, 
-amounting to $20$--$30\%$ at present~\cite{HIG-13-004,Aad:2015vsa,HIG-15-002,HIG-16-043,ATLAS:2018lur},
+at present amounting to $20$--$30\%$~\cite{HIG-13-004,Aad:2015vsa,HIG-15-002,HIG-16-043,ATLAS:2018lur},
 One important prediction of the SM yet has to be verified experimentally, however:
 the $\PHiggs$ boson self-interaction.
 
 The SM predicts $\PHiggs$ boson self-interactions via trilinear and quadlinear couplings. 
-Measurements of the $\PHiggs$ boson self-interactions will ultimately either confirm or falsify that the Brout-Englert-Higgs (BEH) mechanism of the SM is responsible for EWSB. 
+Measurements of the $\PHiggs$ boson self-interactions will ultimately either confirm or falsify 
+that the Brout-Englert-Higgs mechanism of the SM is responsible for EWSB. 
 The trilinear coupling ($\lambda_{\PHiggs\PHiggs\PHiggs}$) can be determined at the LHC, 
-by measuring the rate for $\PHiggs$ boson pair production ($\PHiggs\PHiggs$). 
+by measuring the rate for $\PHiggs$ boson pair ($\PHiggs\PHiggs$) production. 
 The measurement is challenging, due to the small signal cross section, 
 which results from the destructive interference of two competing production processes, and from sizeable backgrounds. 
-The quadlinear coupling is not accessible at the LHC, as the cross section of the corresponding process, 
-triple $\PHiggs$ boson production, is too small to be measured, even with the large dataset collected by the end of LHC operation.
 The leading order (LO) Feynman diagrams for SM $\PHiggs\PHiggs$ production are shown in Fig.~\ref{fig:FeynmanDiagrams_smHH}.
-The cross section for $\PHiggs\PHiggs$ production is small, amounting to about $\sigma = 34$~fb in proton-proton collisions at $\sqrt{s}=13$~\TeV center-of-mass energy,
-due to the destructive interference of the two diagrams.
+The cross section amounts to about $\sigma = 34$~fb in proton-proton collisions at $\sqrt{s}=13$~\TeV center-of-mass energy.
 The ``triangle'' diagram shown on the left depends on $\lambda_{\PHiggs\PHiggs\PHiggs}$,
 while the ``box'' diagram shown on the right does not.
+The quadlinear coupling is not accessible at the LHC, as the cross section of the corresponding process, 
+triple $\PHiggs$ boson production, is too small to be measured, 
+even with the large dataset that is expected to be collected by the end of the LHC operation.
 
 \begin{figure}[h!]
 \setlength{\unitlength}{1mm}
@@ -65,16 +66,20 @@ for example Higgs portal models~\cite{Englert:2011yb,No:2013wsa} and models invo
 as well as two-Higgs-doublet models and models with composite Higgs bosons.
 If the lifetime $t$ of the resonance is sufficiently large, $t \gtrsim 10^{-25}\textrm{~s}/m_{\textrm{X}}\textrm{~[100~GeV]}$, 
 where $m_{\textrm{X}}$ denotes the mass of the resonance, 
-the distribution in the mass $m_{\PHiggs\PHiggs}$ of the $\PHiggs$ boson pair is expected to exhibit a narrow peak at $m_{\textrm{X}}$.
+the distribution in $m_{\PHiggs\PHiggs}$ is expected to exhibit a narrow peak at $m_{\textrm{X}}$.
 
-In this paper we present an algorithm for the reconstruction of the mass $m_{\PHiggs\PHiggs}$ of the $\PHiggs$ boson pair 
-in events in which the $\PHiggs$ boson pair originates from the decay of a heavy resonance $\textrm{X}$ and decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$,
-with subsequent decay of the $\Pgt$ leptons into electrons, muons, or hadrons.
+In this paper we present an algorithm for reconstructing the mass $m_{\PHiggs\PHiggs}$ of the $\PHiggs$ boson pair 
+in events in which the $\PHiggs$ boson pair originates from the decay of a heavy resonance $\textrm{X}$ 
+and decays via $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$,
+with subsequent decay of the $\Pgt$ leptons via $\Pgt \to \enunu$, $\Pgt \to \mununu$, or $\Pgt \to \textrm{hadrons} + \Pnut$.
+We refer to $\Pgt$ decays to an electron or muon (to hadrons) as ``leptonic'' (``hadronic'') $\Pgt$ decays.
+The system of hadrons produced in a hadronic $\Pgt$ decay is denoted by the symbol $\tauh$.
 The decay of $\PHiggs$ boson pairs to four $\Pgt$ leptons ($\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$) has not been discussed in the literature so far.
-This decay channel provides a small branching fraction, but also comparatively low backgrounds.
-The algorithm achieves a resolution on $m_{\PHiggs\PHiggs}$ that varies between $7$ and $22\%$,
+This decay channel provides a small branching fraction, but is expected to benefit from comparatively low backgrounds.
+The resolution on $m_{\PHiggs\PHiggs}$, achieved by our algorithm, varies between $7$ and $22\%$,
 depending on the mass of the resonance.
-We expect that the reconstruction of $m_{\PHiggs\PHiggs}$ will further improve the separation of the $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ signal from backgrounds,
+We expect that the reconstruction of $m_{\PHiggs\PHiggs}$ will significantly improve 
+the separation of the $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ signal from residual backgrounds,
 thereby increasing the sensitivity to either find evidence for the presence of such a signal in the LHC data or to set stringent exclusion limits.
 
 The reconstruction of $m_{\PHiggs\PHiggs}$ in $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events is based on the formalism,
@@ -82,12 +87,12 @@ developed in Ref.~\cite{SVfitMEM}, for treating $\Pgt$ lepton decays in the so-c
 The algorithm presented in this paper does not employ the full ME treatment,
 but is based on a simplified likelihood approach.
 The simplified approach is motivated by the studies performed in Ref.~\cite{SVfitMEM}, 
-which found that the difference in mass resolution between the approximate likelihood treatment and the full ME formalism 
-is small when applied to the task of reconstructing the mass of the $\PHiggs$ boson in events containing single $\PHiggs$ bosons that decay via $\PHiggs \to \Pgt\Pgt$,
-while the likelihood approach provides a significant saving in computing time.
+which found that the difference in mass resolution between the approximate likelihood treatment and the full ME formalism,
+applied to the task of reconstructing the mass of the $\PHiggs$ boson in events containing single $\PHiggs$ bosons that decay via $\PHiggs \to \Pgt\Pgt$,
+is small, while the likelihood approach provides a significant reduction in computing time.
 
-We present the algorithm for reconstructing the mass of the $\PHiggs$ boson pair 
-in $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events in Section~\ref{sec:algorithm}.
-In Section~\ref{sec:performance} we study the resolution achieved by the algorithm
-in reconstructing $m_{\PHiggs\PHiggs}$ for hypothetic resonances $\textrm{X}$ of different mass.
-We conclude the paper with a summary in Section~\ref{sec:summary}.
+Our algorithm for reconstructing the mass of the $\PHiggs$ boson pair 
+in $\PHiggs\PHiggs \to \Pgt\Pgt\Pgt\Pgt$ events is presented in Section~\ref{sec:algorithm}.
+The resolution achieved by the algorithm in reconstructing $m_{\PHiggs\PHiggs}$ 
+for hypothetical resonances $\textrm{X}$ of different mass is studied in Section~\ref{sec:performance}.
+The paper concludes with a summary in Section~\ref{sec:summary}.
