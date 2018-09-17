@@ -15,12 +15,12 @@ The reconstruction of the mass of the $\PHiggs$ boson pair is based on maximizin
 \label{eq:likelihood}
 \end{align}
 with respect to the parameter $m_{\textrm{X}}$, 
-the mass of the as yet undiscovered heavy particle $\textrm{X}$ that decays into a pair of $\PHiggs$ bosons.
+the mass of the postulated heavy particle $\textrm{X}$ that decays into a pair of $\PHiggs$ bosons.
 We refer to the electron, muon, or hadrons produced in each $\Pgt$ decay as the ``visible'' $\Pgt$ decay products.
 Their energy (momentum) is denoted by the symbol $E_{\vis(i)}$ ($\bm{p}^{\vis(i)}$), where the index $i$ ranges between $1$ and $4$.
 The symbol $E_{\Pgt(i)}$ ($\bm{p}^{\Pgt(i)}$) denotes the energy (momentum) of the $i$-th $\Pgt$ lepton.
 Bold letters represent vector quantities.
-The true values of energies and momenta are indicated by symbols with a hat,
+The true values of energies and momenta are indicated by a hat,
 while symbols without a hat represent the measured values.
 We use a Cartesian coordinate system, the $z$-axis of which is defined by the proton beam direction.
 The symbol $d\Phi_{n} = \prod_{i}^{n} \,
@@ -30,7 +30,7 @@ The symbol $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt
 denotes the squared modulus of the ME for the decay of the $i$-th $\Pgt$ lepton.
 The $\delta$-function 
 $\delta\left( \left(\sum_{i=1}^{4} \, E_{\Pgt(i)}\right)^{2} - \left(\sum_{i=1}^{4} \, \bm{\hat{p}}^{\Pgt(i)}\right)^{2} - m_{\textrm{X}} \right)$
-represents the condition that the mass of the system of four $\Pgt$ leptons equals the value of the parameter $m_{\textrm{X}}$
+enforces the condition that the mass of the system of four $\Pgt$ leptons equals the value of the parameter $m_{\textrm{X}}$
 given on the left-hand-side of the equation.
 
 The functions $W(\bm{p}^{\vis(i)}|\bm{\hat{p}}^{\vis(i)})$ and $W_{\rec}( \pX^{\rec},\pY^{\rec} | \pXhat^{\rec},\pYhat^{\rec} )$ are referred to as ``transfer functions'' (TF).
@@ -45,11 +45,11 @@ in the $x$-$y$ plane, of the hadronic recoil.
 The hadronic recoil is defined as the vectorial sum of all particles in the event that do not originate from the decay of the two $\PHiggs$ bosons.
 Conservation of momentum in the plane transverse to the beam direction implies that
 the components $\pXhat^{\rec}$ and $\pYhat^{\rec}$ of its true momentum are equal to the negative sum of the momentum components
-$\pXhat^{\Pgt(i)}$ and $\pYhat^{\Pgt(i)}$ of the four $\Pgt$ leptons:
+$\pXhat^{\Pgt(i)}$ and $\pYhat^{\Pgt(i)}$ of the four $\Pgt$ leptons,
 \begin{equation*}
-\pXhat^{\rec} = -\left( \sum_{i=1}^{4} \, \pXhat^{\Pgt(i)} \right) \quad \mbox{ and } \quad \pYhat^{\rec} = -\left( \sum_{i=1}^{4} \, \pYhat^{\Pgt(i)} \right) \, .
+\pXhat^{\rec} = -\left( \sum_{i=1}^{4} \, \pXhat^{\Pgt(i)} \right) \quad \mbox{ and } \quad \pYhat^{\rec} = -\left( \sum_{i=1}^{4} \, \pYhat^{\Pgt(i)} \right) \, ,
 \end{equation*}
-The conservation of momentum is enforced by the two $\delta$-functions
+as enforced by the two $\delta$-functions
 $\delta\left( \pXhat^{\rec} + \sum_{i=1}^{4} \pXhat^{\Pgt(i)} \right)$ and $\delta\left( \pYhat^{\rec} + \sum_{i=1}^{4} \pYhat^{\Pgt(i)} \right)$
 in the integrand.
 
@@ -99,9 +99,21 @@ Two (three) variables are sufficient to fully parametrize the kinematics of hadr
 Following Ref.~\cite{SVfitMEM}, we choose to parametrize hadronic $\Pgt$ decays by the variables $z$ and $\phi_{\inv}$,
 and leptonic $\Pgt$ decays by the variables $z$, $\phi_{\inv}$, and $m_{\inv}$.
 The variable $z$ corresponds to the fraction of $\Pgt$ lepton energy, in the laboratory frame, that is carried by the visible $\Pgt$ decay products.
-The variable $\phi_{\inv}$ specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector (see Fig.~4 in Ref.~\cite{SVfitMEM} for illustration),
+The variable $\phi_{\inv}$ specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector (see Fig.~\ref{fig:tauDecayParametrization} for illustration),
 where the vector $\bm{p}^{\inv}$ refers to the vectorial sum of the momenta of the two neutrinos (to the momentum of the single $\Pnut$) produced in leptonic (hadronic) $\Pgt$ decays.
 The variable $m_{\inv}$ denotes the mass of the neutrino pair produced in leptonic $\Pgt$ decays.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics*[height=58mm]{figures/tauDecayParametrization.pdf}
+\end{center}
+\caption{
+  Illustration of the variable $\phi_{\inv}$ that specifies the orientation of the $\bm{p}^{\inv}$ vector relative to the $\bm{p}^{\vis}$ vector.
+  The angle $\theta_{\inv}$ between the $\bm{p}^{\inv}$ vector and the $\bm{p}^{\vis}$ vector is related to the variable $z$,
+  as described in Section 2.4 of Ref.~\cite{SVfitMEM}, from which the illustration was taken.
+}
+\label{fig:tauDecayParametrization}
+\end{figure} 
 
 Expressions for the product of the phase-space element $d\Phi_{n}$ 
 with the squared moduli $\vert \BW^{(i)}_{\Pgt} \vert^{2} \cdot \vert \mathcal{M}^{(i)}_{\Pgt\to\cdots}(\bm{\hat{p}}) \vert^{2}$ 
@@ -143,8 +155,8 @@ The knowledge that the four $\Pgt$ leptons originate from the decay of two $\PHi
 $\mathcal{P}$ by suitably chosen constraints.
 For the purpose of defining the constraints, it is useful to enumerate the $\Pgt$ leptons 
 such that the two $\Pgt$ leptons with indices $i=1$ and $i=2$ (and similarly the two $\Pgt$ leptons with indices $i=3$ and $i=4$) are interpreted as originating from the same $\PHiggs$ boson.
-We then demand that the visible $\Pgt$ decay products corresponding to the indices $i=1$ and $i=2$ have opposite charge,
-and require the same for the visible $\Pgt$ decay products corresponding to the indices $i=3$ and $i=4$.
+We then require that the visible $\Pgt$ decay products corresponding to the indices $i=1$ and $i=2$ have opposite charge,
+and the same applies to the visible $\Pgt$ decay products corresponding to the indices $i=3$ and $i=4$.
 As the width of the $\PHiggs$ boson is known to be small~\cite{HIG-14-002,Aad:2015xua} compared to the experimental resolution that we aim to achieve on $m_{\PHiggs\PHiggs}$,
 we choose to neglect it and use the narrow-width approximation (NWA) for each $\PHiggs$ boson.
 The NWA introduces two $\delta$-functions, 
@@ -166,7 +178,7 @@ where we denote by the symbol $m_{\vis(ij)}$ the ``visible mass'' of the decay p
 m_{\vis(ij)} = (\hat{E}_{\vis(i)} + \hat{E}_{\vis(i)})^{2} - (\bm{\hat{p}}^{\vis(i)} + \bm{\hat{p}}^{\vis(j)})^{2} \, .
 \end{equation*}
 The $\delta$-functions are used to eliminate the integration over the variables $z_{2}$ and $z_{4}$.
-The $\delta$-function rule:
+The $\delta$-function rule,
 \begin{equation*} 
 \delta \left( g(x) \right) = \sum_{k} \, \frac{\delta \left( x - x_{k}
   \right)}{\vert g'(x_{k}) \vert} \, ,
@@ -232,7 +244,7 @@ The evaluation of the integral is performed numerically, using the VAMP algorith
 an improved implementation of the VEGAS algorithm~\cite{VEGAS}.
 For each mass hypothesis $m_{\textrm{X}}^{(i)}$, the integrand is evaluated $20\,000$ times.
 
-We note in passing that our algorithm alternatively supports to perform the integration using a custom implementation
+We note in passing that our algorithm alternatively supports an integration methods based on a custom implementation
 of the Markov-Chain integration method with the Metropolis--Hastings algorithm~\cite{Metropolis_Hastings}.
 The latter allows to reconstruct the $\pT$, pseudo-rapidity $\eta$, and azimuthal angle $\phi$ of the resonance $\textrm{X}$ also.
 In this paper, we focus on the reconstruction of the mass, however.

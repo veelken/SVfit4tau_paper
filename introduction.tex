@@ -1,12 +1,13 @@
 \section{Introduction}
 \label{sec:introduction}
 
-The discovery of a Higgs ($\PHiggs$) boson by the ATLAS and CMS experiments at the LHC~\cite{Higgs-Discovery_CMS,Higgs-Discovery_ATLAS}
+The discovery of the Higgs ($\PHiggs$) boson by the ATLAS and CMS experiments at the LHC~\cite{Higgs-Discovery_CMS,Higgs-Discovery_ATLAS}
 represents a major step towards our understanding of electroweak symmetry breaking (EWSB) 
-and of the mechanism that generates the masses of quarks and leptons, the particles that constitute the ``ordinary'' matter in our universe.
+and of the mechanism that generates the masses of quarks and leptons, which constitute the ``ordinary'' matter in our Universe.
 In a combined analysis of the data recorded by ATLAS and CMS, 
 the mass, $m_{\PHiggs}$, of the $\PHiggs$ boson has been measured to be $m_{\PHiggs} = 125.09 \pm 0.24$~\GeV~\cite{HIG-14-042}.
-The Standard Model (SM) of particle physics makes precise predictions for all properties of the $\PHiggs$ boson, given its mass.
+The Standard Model (SM) of particle physics makes precise predictions for all properties of the $\PHiggs$ boson, 
+given its mass and the vacuum expectation value $v=246$~\GeV~\cite{PDG} of the Higgs field.
 So far, all properties that have been measured agree with the expectation for a SM $\PHiggs$ boson~\cite{HIG-15-002}.
 The rate for its decay to a pair of $\Pgt$ leptons has been measured recently
 and found to be consistent with the SM expectation within the uncertainties of these measurements, 
@@ -14,19 +15,20 @@ at present amounting to $20$--$30\%$~\cite{HIG-13-004,Aad:2015vsa,HIG-15-002,HIG
 One important prediction of the SM yet has to be verified experimentally, however:
 the $\PHiggs$ boson self-interaction.
 
-The SM predicts $\PHiggs$ boson self-interactions via trilinear and quadlinear couplings. 
+The SM predicts $\PHiggs$ boson self-interactions via trilinear and quartic couplings. 
 Measurements of the $\PHiggs$ boson self-interactions will ultimately either confirm or falsify 
-that the Brout-Englert-Higgs mechanism of the SM is responsible for EWSB. 
+that the Brout-Englert-Higgs mechanism of the SM is responsible for EWSB
+and the flavour hierarchy of the SM. 
 The trilinear coupling ($\lambda_{\PHiggs\PHiggs\PHiggs}$) can be determined at the LHC, 
 by measuring the rate for $\PHiggs$ boson pair ($\PHiggs\PHiggs$) production. 
-The measurement is challenging, due to the small signal cross section, 
-which results from the destructive interference of two competing production processes, and from sizeable backgrounds. 
+The measurement is challenging, because of the small signal cross section, 
+which results from the destructive interference of two competing production processes, and suffers from sizeable backgrounds. 
 The leading order (LO) Feynman diagrams for SM $\PHiggs\PHiggs$ production are shown in Fig.~\ref{fig:FeynmanDiagrams_smHH}.
 The cross section amounts to about $\sigma = 34$~fb in proton-proton collisions at $\sqrt{s}=13$~\TeV center-of-mass energy.
 The ``triangle'' diagram shown on the left depends on $\lambda_{\PHiggs\PHiggs\PHiggs}$,
 while the ``box'' diagram shown on the right does not.
-The quadlinear coupling is not accessible at the LHC, as the cross section of the corresponding process, 
-triple $\PHiggs$ boson production, is too small to be measured, 
+The quartic coupling is not accessible at the LHC, as the cross section of the corresponding process, 
+triple $\PHiggs$ boson production, is too small to be measured
 even with the large dataset that is expected to be collected by the end of the LHC operation.
 
 \begin{figure}[h!]
@@ -44,7 +46,7 @@ even with the large dataset that is expected to be collected by the end of the L
 \label{fig:massDistributions}
 \end{figure}
 
-Deviations of $\lambda_{\PHiggs\PHiggs\PHiggs}$ from its SM value of $\lambda_{\textrm{SM}}=1$, referred to as anomalous $\PHiggs$ boson self-couplings,
+Deviations of $\lambda_{\PHiggs\PHiggs\PHiggs}$ from its SM value of $\lambda_{\textrm{SM}}=\frac{m_{\PHiggs}^2}{2 \, v}$, referred to as anomalous $\PHiggs$ boson self-couplings,
 alter the interference between the two diagrams, 
 resulting in a change in the $\PHiggs\PHiggs$ production cross section and a change in the distribution of the mass, $m_{\PHiggs\PHiggs}$, of the $\PHiggs$ boson pair.
 Regardless of the value of $\lambda_{\PHiggs\PHiggs\PHiggs}$, a broad distribution in $m_{\PHiggs\PHiggs}$ is expected,
@@ -52,7 +54,7 @@ motivating the convention to refer to the interference of box and triangle diagr
 The shape of the distribution in $m_{\PHiggs\PHiggs}$ provides a handle to determine $\lambda_{\PHiggs\PHiggs\PHiggs}$,
 complementary to measuring the $\PHiggs\PHiggs$ production cross section.
 Various scenarios beyond the SM feature anomalous $\PHiggs$ boson self-couplings,
-for example two-Higgs-doublet models~\cite{Branco:2011iw}, such as the minimal supersymmetric extension of the SM (MSSM)~\cite{Gunion:1989we},
+for example two-Higgs-doublet models~\cite{Branco:2011iw}, the minimal supersymmetric extension of the SM (MSSM)~\cite{Gunion:1989we},
 and models with composite $\PHiggs$ bosons~\cite{Grober:2010yv,Contino:2012xk}.
 The prospects for improving the sensitivity to determine $\lambda_{\PHiggs\PHiggs\PHiggs}$ by utilising information on the mass of the $\PHiggs$ boson pair
 have been studied in events in which the $\PHiggs$ boson pair decays via $\PHiggs\PHiggs \to \PW\PW\PW\PW$, with subsequent decay of the $\PW$ bosons to electrons, muons, or jets,
@@ -88,7 +90,7 @@ The algorithm presented in this paper does not employ the full ME treatment,
 but is based on a simplified likelihood approach.
 The simplified approach is motivated by the studies performed in Ref.~\cite{SVfitMEM}, 
 which found that the difference in mass resolution between the approximate likelihood treatment and the full ME formalism,
-applied to the task of reconstructing the mass of the $\PHiggs$ boson in events containing single $\PHiggs$ bosons that decay via $\PHiggs \to \Pgt\Pgt$,
+applied to the task of reconstructing the mass of the $\PHiggs$ boson in events containing a single $\PHiggs$ boson that decays via $\PHiggs \to \Pgt\Pgt$,
 is small, while the likelihood approach provides a significant reduction in computing time.
 
 Our algorithm for reconstructing the mass of the $\PHiggs$ boson pair 
